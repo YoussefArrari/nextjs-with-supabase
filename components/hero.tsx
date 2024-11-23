@@ -1,8 +1,14 @@
 import NextLogo from "./next-logo";
 import PowerBi from "./powerbi-logo";
 import SupabaseLogo from "./supabase-logo";
+import { createClient } from "@/utils/supabase/server";
+import { Button } from "./ui/button";
+export default async function Header() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-export default function Header() {
   return (
     <div className="flex flex-col gap-16 items-center">
       <div className="flex gap-8 justify-center items-center  ">
@@ -36,6 +42,11 @@ export default function Header() {
       <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-2xl text-center">
         Faster way to share your Dashboard to your non-Power BI users
       </p>
+      {user && (
+        <Button className="!text-lg" variant="link">
+          Go to Dashboard &rarr;
+        </Button>
+      )}
       <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
     </div>
   );
