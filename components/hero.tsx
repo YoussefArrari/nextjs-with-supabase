@@ -1,42 +1,40 @@
 import NextLogo from "./next-logo";
+import PowerBi from "./powerbi-logo";
 import SupabaseLogo from "./supabase-logo";
 
 export default function Header() {
   return (
     <div className="flex flex-col gap-16 items-center">
-      <div className="flex gap-8 justify-center items-center">
+      <div className="flex gap-8 justify-center items-center  ">
         <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+          href="https://www.microsoft.com/en-us/power-platform/products/power-bi"
           target="_blank"
           rel="noreferrer"
+          className=" -mt-2"
         >
-          <SupabaseLogo />
+          <PowerBi />
         </a>
         <span className="border-l rotate-45 h-6" />
-        <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
-          <NextLogo />
-        </a>
-      </div>
-      <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
-      <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
-        The fastest way to build apps with{" "}
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="font-bold hover:underline"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>{" "}
-        and{" "}
         <a
           href="https://nextjs.org/"
           target="_blank"
-          className="font-bold hover:underline"
           rel="noreferrer"
+          className=" mt-1"
         >
-          Next.js
+          <NextLogo />
+        </a>{" "}
+        <span className="border-l rotate-45 h-6" />
+        <a
+          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+          target="_blank"
+          rel="noreferrer"
+          className=" mt-1"
+        >
+          <SupabaseLogo />
         </a>
+      </div>
+      <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-2xl text-center">
+        Faster way to share your Dashboard to your non-Power BI users
       </p>
       <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
     </div>
