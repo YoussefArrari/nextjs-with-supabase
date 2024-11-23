@@ -43,8 +43,8 @@ export default async function Header() {
         Faster way to share your Dashboard to your non-Power BI users
       </p>
       {user && (
-        <Button className="!text-lg" variant="link">
-          Go to Dashboard &rarr;
+        <Button asChild className="!text-lg" variant="link">
+          <a href="/dashboard">Go to Dashboard &rarr;</a>
         </Button>
       )}
       <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
